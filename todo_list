@@ -20,3 +20,6 @@
   156  systemctl status s1panel
   158  systemctl restart s1panel
 
+  272  apt install fail2ban
+  273  systemctl enable --now fail2ban
+  274  fail2ban-client status
