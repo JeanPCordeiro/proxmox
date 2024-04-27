@@ -10,15 +10,13 @@
    52  resize2fs /dev/mapper/pve-root
 
 
-  110  apt install git
-  111  git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git acemagic
-  145  apt install nodejs
-  146  apt install npm
-  149  apyt install lm-sensors
-  150  apt install lm-sensors
-  151  ./install 
-  156  systemctl status s1panel
-  158  systemctl restart s1panel
+apt install -y git curl nodejs npm lm-sensors
+git clone https://github.com/tjaworski/AceMagic-S1-LED-TFT-Linux.git acemagic
+cd acemagic/s1panel
+./install
+systemctl status s1panel
+systemctl restart s1panel
+systemctl enable --now s1panel
 
   272  apt install fail2ban
   273  systemctl enable --now fail2ban
